@@ -11,7 +11,7 @@ const BRAND_DISPLAY_NAMES = {
   NenukosBarber: 'Nenukos Barber',
 }
 
-const brandModules = import.meta.glob('./Marcas/*.{png,jpg,jpeg,PNG,JPG,JPEG}', {
+const brandModules = import.meta.glob('./Marcas/*.{webp,WEBP}', {
   eager: true,
   import: 'default',
 })
@@ -122,6 +122,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const elementsToAnimate = document.querySelectorAll('.fade-in-up');
   elementsToAnimate.forEach(el => observer.observe(el));
+
+  // Instagram: en mobile intenta abrir la app, con fallback a la web
+  const instagramLinks = document.querySelectorAll('.js-instagram-link')
+  const openInstagramApp = (event) => {
+    const webUrl = 'https://www.instagram.com/manageopy/'
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+    if (!isMobile) return // deja el href normal en desktop
+
+    event.preventDefault()
+    const appUrl = 'instagram://user?username=manageopy'
+    const start = Date.now()
+    window.location.href = appUrl
+
+    window.setTimeout(() => {
+      // Si la app no abrió, cae a Instagram web
+      if (Date.now() - start < 1600) {
+        window.location.href = webUrl
+      }
+    }, 900)
+  }
+  instagramLinks.forEach((link) => {
+    link.addEventListener('click', openInstagramApp)
+  })
 
   // Init Vanilla Tilt (desktop only — avoids broken mockup badges on tablet/mobile)
   if (window.VanillaTilt && window.innerWidth > 992) {

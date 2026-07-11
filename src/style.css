@@ -329,8 +329,35 @@ h4 { font-weight: 600; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 0 1.25rem;
   transition: padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--text-primary);
+}
+
+/* Offset for fixed navbar when jumping to anchors */
+#casos,
+#servicios,
+#contacto,
+#clientes {
+  scroll-margin-top: 6rem;
 }
 
 .navbar.scrolled .nav-content {
@@ -655,12 +682,16 @@ h4 { font-weight: 600; }
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 50s linear infinite;
+  animation: marquee-scroll 40s linear infinite;
   will-change: transform;
+  backface-visibility: hidden;
 }
 
-.marquee-panel:hover .marquee-track {
-  animation-play-state: paused;
+/* Pausar solo con mouse real — en touch el :hover se queda pegado y frena el carrusel */
+@media (hover: hover) and (pointer: fine) {
+  .marquee-panel:hover .marquee-track {
+    animation-play-state: paused;
+  }
 }
 
 .marquee-group {
@@ -709,27 +740,13 @@ h4 { font-weight: 600; }
 }
 
 @keyframes marquee-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-    gap: 1.25rem;
-    padding: 0 1.5rem;
-  }
-
-  .marquee-group[aria-hidden="true"] {
-    display: none;
-  }
-
-  .marquee-wrapper {
-    mask-image: none;
-    -webkit-mask-image: none;
+    animation-duration: 90s;
   }
 }
 
@@ -738,20 +755,25 @@ h4 { font-weight: 600; }
     padding: 1.75rem 0;
   }
 
+  .marquee-track {
+    animation-duration: 22s;
+    animation-play-state: running;
+  }
+
   .marquee-group {
-    gap: 1.25rem;
+    gap: 1rem;
     padding-inline: 0.75rem;
   }
 
   .brand-logo-item {
-    height: 68px;
-    min-width: 130px;
+    height: 58px;
+    min-width: 120px;
     padding: 0.4rem 1rem;
   }
 
   .brand-logo-item img {
-    height: 48px;
-    max-width: 140px;
+    height: 40px;
+    max-width: 120px;
   }
 }
 
@@ -1087,26 +1109,66 @@ h4 { font-weight: 600; }
 
 .case-features {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
   margin-top: 1.35rem;
+  width: 100%;
+}
+
+.case-featured .case-features {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .case-features li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: 0.78rem;
   font-weight: 600;
+  line-height: 1.25;
   color: var(--text-secondary);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-color);
-  border-radius: 99px;
-  padding: 0.35rem 0.75rem;
+  border-radius: 12px;
+  padding: 0.55rem 0.65rem;
+  min-height: 2.6rem;
+}
+
+/* Si queda 1 chip solo en la última fila, que ocupe el ancho */
+.case-features li:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.case-featured .case-features li:last-child:nth-child(odd) {
+  grid-column: auto;
 }
 
 .case-featured .case-features li {
   background: rgba(37, 99, 235, 0.1);
   border-color: rgba(96, 165, 250, 0.18);
   color: #BFDBFE;
+}
+
+@media (max-width: 992px) {
+  .case-featured .case-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .case-features,
+  .case-featured .case-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.45rem;
+  }
+
+  .case-features li {
+    font-size: 0.72rem;
+    padding: 0.5rem 0.45rem;
+    min-height: 2.4rem;
+  }
 }
 
 .case-result-box {
@@ -1305,11 +1367,55 @@ h4 { font-weight: 600; }
 /* CTA Final */
 .cta-final { padding: 8rem 0; }
 .cta-container {
-  padding: 5rem 2rem; max-width: 800px;
+  position: relative;
+  padding: 5rem 2rem;
+  max-width: 800px;
+  overflow: hidden;
   background: linear-gradient(180deg, rgba(31, 41, 55, 0.4) 0%, rgba(17, 24, 39, 0.8) 100%);
 }
-.cta-title { font-size: 3.5rem; margin-bottom: 1rem; }
-.cta-desc { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; }
+.cta-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 280px;
+  height: 280px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  animation: cta-breathe 4.5s ease-in-out infinite;
+}
+.cta-title { font-size: 3.5rem; margin-bottom: 1rem; position: relative; }
+.cta-desc { font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 3rem; position: relative; }
+.cta-btn {
+  position: relative;
+  animation: cta-btn-pulse 2.8s ease-in-out infinite;
+}
+.cta-btn:hover {
+  animation: none;
+}
+.cta-btn svg {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.cta-btn:hover svg {
+  transform: translateX(3px) scale(1.05);
+}
+
+@keyframes cta-breathe {
+  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+}
+
+@keyframes cta-btn-pulse {
+  0%, 100% { box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25); }
+  50% { box-shadow: 0 6px 28px rgba(96, 165, 250, 0.45); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow,
+  .cta-btn {
+    animation: none;
+  }
+}
 
 /* Footer */
 .footer {
@@ -1551,15 +1657,6 @@ h4 { font-weight: 600; }
     font-size: 0.95rem;
   }
 
-  .case-features {
-    gap: 0.4rem;
-  }
-
-  .case-features li {
-    font-size: 0.72rem;
-    padding: 0.3rem 0.65rem;
-  }
-
   .vs-grid {
     flex-direction: column;
     gap: 0.85rem;
@@ -1593,21 +1690,6 @@ h4 { font-weight: 600; }
     margin-bottom: 2rem;
   }
 
-  .marquee-group {
-    gap: 1rem;
-  }
-
-  .brand-logo-item {
-    height: 58px;
-    min-width: 112px;
-    padding: 0.35rem 0.85rem;
-  }
-
-  .brand-logo-item img {
-    height: 40px;
-    max-width: 120px;
-  }
-
   .whatsapp-fab {
     display: flex;
   }
@@ -1617,6 +1699,14 @@ h4 { font-weight: 600; }
   }
 
   .navbar .nav-btn { display: none; }
+
+  .nav-links {
+    gap: 0.85rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
 
   .fade-in-up {
     filter: none;
