@@ -1,624 +1,1093 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manageopy | Gestiona tu Negocio De Forma Inteligente</title>
-  <meta name="description"
-    content="Tu negocio tiene un problema puntual. Nosotros construimos la solución exacta. Software de gestión a medida para PyMEs en Paraguay." />
+    <title>Manageopy | Sistemas de gestión y páginas web en Paraguay</title>
+    <meta
+      name="description"
+      content="Ayudamos a PyMEs del Paraguay a ordenar su gestión y crecer con sistemas a medida y páginas web profesionales. Conocé proyectos reales de Manageopy."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="theme-color" content="#0b0e13" />
+    <link rel="canonical" href="https://manageo-py.vercel.app/" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/favicon.png" type="image/png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Open Graph / WhatsApp / Instagram -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_PY" />
-  <meta property="og:site_name" content="Manageopy" />
-  <meta property="og:url" content="https://manageo-py.vercel.app/" />
-  <meta property="og:title" content="Manageopy | Software a medida para PyMEs" />
-  <meta property="og:description"
-    content="Sistemas de gestión y plataformas web hechos a medida para negocios en Paraguay." />
-  <meta property="og:image" content="https://manageo-py.vercel.app/og-image.jpg" />
-  <meta property="og:image:secure_url" content="https://manageo-py.vercel.app/og-image.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Manageopy — Software a medida para PyMEs en Paraguay" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PY" />
+    <meta property="og:site_name" content="Manageopy" />
+    <meta property="og:url" content="https://manageo-py.vercel.app/" />
+    <meta property="og:title" content="Manageopy | Tecnología para hacer crecer tu PyME" />
+    <meta
+      property="og:description"
+      content="Sistemas de gestión y páginas web para ordenar, vender y hacer crecer PyMEs del Paraguay."
+    />
+    <meta property="og:image" content="https://manageo-py.vercel.app/og-manageopy-v2.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Manageopy — Sistemas y páginas web a medida" />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Manageopy | Software a medida para PyMEs" />
-  <meta name="twitter:description"
-    content="Sistemas de gestión y plataformas web hechos a medida para negocios en Paraguay." />
-  <meta name="twitter:image" content="https://manageo-py.vercel.app/og-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Manageopy | Tecnología para hacer crecer tu PyME" />
+    <meta
+      name="twitter:description"
+      content="Sistemas de gestión y páginas web para ordenar, vender y hacer crecer PyMEs del Paraguay."
+    />
+    <meta name="twitter:image" content="https://manageo-py.vercel.app/og-manageopy-v2.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-<body class="antialiased">
-  
-  <!-- Scroll Progress Bar -->
-  <div id="scroll-progress"></div>
-  
-  <!-- Mesh Background -->
-  <div class="mesh-bg">
-    <div class="mesh-blob blob-1"></div>
-    <div class="mesh-blob blob-2"></div>
-    <div class="mesh-blob blob-3"></div>
-  </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://manageo-py.vercel.app/#business",
+            "name": "Manageopy",
+            "url": "https://manageo-py.vercel.app/",
+            "logo": "https://manageo-py.vercel.app/apple-touch-icon.png",
+            "image": "https://manageo-py.vercel.app/og-manageopy-v2.png",
+            "description": "Sistemas de gestión y páginas web a medida para ayudar a PyMEs del Paraguay a ordenar su operación, vender mejor y crecer.",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Paraguay"
+            },
+            "telephone": "+595986942192",
+            "sameAs": ["https://www.instagram.com/manageopy/"],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+595986942192",
+              "contactType": "sales",
+              "availableLanguage": "Spanish"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Servicios digitales",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Sistemas de gestión a medida"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Páginas web y catálogos online"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Proyectos web publicados por Manageopy",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Sigfrancis",
+                "url": "https://sigfrancis-web.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Lápidas PY",
+                "url": "https://lapidas-py.vercel.app/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Lafa Cocinas",
+                "url": "https://lafacocinas.vercel.app/"
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Manageopy desarrolla páginas web y sistemas de gestión?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Manageopy desarrolla páginas web, catálogos online y sistemas de gestión a medida."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta un proyecto?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "El costo depende del alcance y la complejidad. Después de una primera conversación, Manageopy prepara una propuesta clara."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué pasa después del lanzamiento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Manageopy acompaña la puesta en marcha y acuerda con cada cliente el soporte y las mejoras posteriores."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
 
-  <!-- Navbar (Floating Pill on scroll) -->
-  <div class="navbar-wrapper">
-    <header class="navbar" id="navbar">
-      <div class="container nav-content">
-        <a href="#" class="logo">
-          <img src="/src/Logo/LogoManageopy-sm.png" alt="Manageopy" class="logo-img" width="32" height="32" />
-          <span>anageopy</span>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header" id="inicio">
+      <div class="shell header-inner">
+        <a class="brand" href="#inicio" aria-label="Manageopy, ir al inicio">
+          <img src="/src/Logo/LogoManageopy-sm.png" alt="" width="30" height="30" />
+          <span>manageopy</span>
         </a>
-        <nav class="nav-links" aria-label="Navegación principal">
-          <a href="#casos">Casos</a>
+
+        <nav class="main-nav" aria-label="Navegación principal">
           <a href="#servicios">Servicios</a>
-          <a href="#contacto">Contacto</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#equipo">Equipo</a>
         </nav>
-        <a href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20mi%20negocio%20tiene%20un%20problema%20de%20gesti%C3%B3n.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
-          class="btn-primary-outline btn-sm nav-btn" target="_blank" rel="noopener noreferrer">
-          <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          <span>Contactar</span>
+
+        <a
+          class="header-contact"
+          href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20quiero%20conversar%20sobre%20un%20proyecto."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hablemos <span aria-hidden="true">↗</span>
         </a>
       </div>
     </header>
-  </div>
 
-  <!-- Hero with Dashboard Mockup -->
-  <section class="hero section relative">
-    <div class="container hero-grid">
-      
-      <!-- Hero Text (Izquierda) -->
-      <div class="hero-content fade-in-up">
-        <div class="hero-badge">
-          <span class="badge-dot"></span> Software a Medida en Paraguay
-        </div>
-        <h1>Tu negocio tiene un <span class="text-gradient">problema puntual</span>. Nosotros construimos la <span class="text-gradient">solución exacta</span>.</h1>
-        <p class="subtitle">Desarrollamos software de gestión a medida para PyMEs. Stock, ventas, pedidos, turnos y clientes, creados exclusivamente para tu realidad.</p>
-        <div class="hero-ctas">
-          <a href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20mi%20negocio%20tiene%20un%20problema%20de%20gesti%C3%B3n.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
-            class="btn-primary btn-glow" target="_blank" rel="noopener noreferrer">
-            Contanos tu problema
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="#casos" class="btn-secondary">
-            Ver casos reales
-          </a>
-        </div>
-      </div>
-
-      <!-- Hero Visual: Abstract Dashboard (Derecha) -->
-      <div class="hero-visual fade-in-up" style="--delay: 0.3s">
-        <div class="mockup-window glass-card js-tilt" data-tilt-max="5" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
-          <div class="mockup-header">
-            <div class="mac-btns"><span class="btn-red"></span><span class="btn-yellow"></span><span class="btn-green"></span></div>
-            <div class="mockup-title">manageopy.app</div>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-sidebar">
-              <div class="skel-block mb-3"></div>
-              <div class="skel-line w-full"></div>
-              <div class="skel-line w-3-4 mt-2"></div>
-              <div class="skel-line w-full mt-2"></div>
-              <div class="skel-line w-1-2 mt-2"></div>
+    <main id="contenido">
+      <section class="hero">
+        <div class="shell hero-layout">
+          <div class="hero-copy reveal">
+            <p class="kicker">Diseño y desarrollo digital · Paraguay</p>
+            <h1>
+              Sistemas de gestión + páginas web
+              <em>para impulsar tu PyME o marca personal.</em>
+            </h1>
+            <p class="hero-lead">
+              Creamos soluciones a medida para ordenar procesos, presentar mejor
+              lo que hacés y convertir visitas en nuevas oportunidades.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20quiero%20conversar%20sobre%20un%20proyecto."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hablemos de tu proyecto <span aria-hidden="true">↗</span>
+              </a>
+              <a class="hero-inline-link" href="#proyectos">
+                Ver proyectos realizados <span aria-hidden="true">→</span>
+              </a>
             </div>
-            <div class="mockup-main">
-              <div class="mockup-stats">
-                <div class="mockup-stat-card"><div class="stat-value"></div><div class="stat-label"></div></div>
-                <div class="mockup-stat-card"><div class="stat-value"></div><div class="stat-label"></div></div>
-                <div class="mockup-stat-card highlight"><div class="stat-value"></div><div class="stat-label"></div></div>
+          </div>
+
+          <aside class="work-index reveal" aria-label="Proyectos web publicados">
+            <div class="hero-browser-bar" aria-hidden="true">
+              <div><span></span><span></span><span></span></div>
+              <p>manageopy.com/proyectos</p>
+            </div>
+
+            <div class="hero-mini-page">
+              <div class="hero-mini-nav">
+                <div>
+                  <img src="/src/Logo/LogoManageopy-sm.png" alt="" width="22" height="22" />
+                  <strong>manageopy</strong>
+                </div>
+                <span>Portfolio</span>
               </div>
-              <div class="mockup-chart-box">
-                <div class="mockup-chart">
-                  <div class="chart-bar" style="height: 40%"></div>
-                  <div class="chart-bar" style="height: 65%"></div>
-                  <div class="chart-bar" style="height: 50%"></div>
-                  <div class="chart-bar active" style="height: 90%"></div>
-                  <div class="chart-bar" style="height: 70%"></div>
-                  <div class="chart-bar" style="height: 85%"></div>
+
+              <div class="work-proof-head">
+                <p class="work-proof-eyebrow"><span></span> Trabajo publicado</p>
+                <h2>Proyectos que podés abrir y recorrer.</h2>
+                <p class="work-proof-total">3 sitios online · Acceso directo</p>
+              </div>
+
+              <div class="work-index-list">
+                <a
+                  class="work-index-row"
+                  href="https://sigfrancis-web.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="work-mark mark-sf">SF</span>
+                  <span class="work-name">
+                    <strong>Sigfrancis</strong>
+                    <small><i></i> Perfil y cursos</small>
+                  </span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                  class="work-index-row"
+                  href="https://lapidas-py.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="work-mark">
+                    <img src="/src/Marcas/lapidaspy.webp" alt="" width="48" height="48" />
+                  </span>
+                  <span class="work-name">
+                    <strong>Lápidas PY</strong>
+                    <small><i></i> Catálogo guiado</small>
+                  </span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </a>
+
+                <a
+                  class="work-index-row"
+                  href="https://lafacocinas.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span class="work-mark">
+                    <img src="/src/Marcas/lafa-cocinas.webp" alt="" width="48" height="48" />
+                  </span>
+                  <span class="work-name">
+                    <strong>Lafa Cocinas</strong>
+                    <small><i></i> Vitrina digital</small>
+                  </span>
+                  <span class="work-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <div class="hero-system-proof">
+                <img src="/src/Marcas/logoMonaco90.webp" alt="Monaco90" />
+                <div>
+                  <small>También desarrollamos sistemas privados</small>
+                  <strong>Monaco90 · Gestión multiempresa</strong>
+                </div>
+                <a href="#sistemas">Ver sistema <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="client-ledger" id="clientes" aria-labelledby="clientes-title">
+        <div class="shell">
+          <div class="client-ledger-header">
+            <p class="section-code">Clientes / colaboración</p>
+            <h2 id="clientes-title">Negocios y profesionales que confiaron en nuestro trabajo.</h2>
+          </div>
+
+          <div class="client-marquee" aria-label="Clientes y marcas">
+            <div class="client-marquee-track">
+              <div class="client-marquee-group">
+                <div class="client-logo"><img src="/src/Marcas/NenukosBarber.webp" alt="Nenukos Barber" /></div>
+                <div class="client-logo"><img src="/src/Marcas/lapidaspy.webp" alt="Lápidas PY" /></div>
+                <div class="client-logo"><img src="/src/Marcas/lafa-cocinas.webp" alt="Lafa Cocinas" /></div>
+                <div class="client-logo"><img src="/src/Marcas/newgalley.webp" alt="New Galley" /></div>
+                <div class="client-logo"><img src="/src/Marcas/Marmopar.webp" alt="Marmopar" /></div>
+                <div class="client-logo"><img src="/src/Marcas/Leonor.webp" alt="Leonor" /></div>
+                <div class="client-logo client-wordmark" aria-label="Sigfrancis">Sigfrancis</div>
+              </div>
+              <div class="client-marquee-group" aria-hidden="true">
+                <div class="client-logo"><img src="/src/Marcas/NenukosBarber.webp" alt="" /></div>
+                <div class="client-logo"><img src="/src/Marcas/lapidaspy.webp" alt="" /></div>
+                <div class="client-logo"><img src="/src/Marcas/lafa-cocinas.webp" alt="" /></div>
+                <div class="client-logo"><img src="/src/Marcas/newgalley.webp" alt="" /></div>
+                <div class="client-logo"><img src="/src/Marcas/Marmopar.webp" alt="" /></div>
+                <div class="client-logo"><img src="/src/Marcas/Leonor.webp" alt="" /></div>
+                <div class="client-logo client-wordmark">Sigfrancis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="manifesto section-paper">
+        <div class="shell manifesto-layout">
+          <div class="section-rail reveal">
+            <span class="section-number">01</span>
+            <p>Cómo pensamos</p>
+          </div>
+
+          <div class="manifesto-content">
+            <h2 class="reveal">
+              No empezamos por una lista de funciones.
+              <span>Empezamos por el cambio que necesitás.</span>
+            </h2>
+            <p class="thinking-lead reveal">
+              A veces el cambio es ordenar una operación. Otras, presentar mejor
+              una marca o abrir un nuevo canal de venta. La solución depende del
+              objetivo, no de una plantilla.
+            </p>
+
+            <div class="thinking-grid reveal">
+              <article class="thinking-card thinking-card-question">
+                <p>Antes de diseñar</p>
+                <h3>Entendemos qué está pasando.</h3>
+                <ul>
+                  <li>¿Qué tarea te quita tiempo?</li>
+                  <li>¿Dónde se pierde información?</li>
+                  <li>¿Qué debería hacer mejor tu cliente?</li>
+                </ul>
+              </article>
+
+              <article class="thinking-card thinking-card-answer">
+                <p>Cuando construimos</p>
+                <h3>Priorizamos lo que genera valor.</h3>
+                <ul>
+                  <li>Solo las funciones necesarias</li>
+                  <li>Una experiencia clara para usar</li>
+                  <li>Una base preparada para evolucionar</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services" id="servicios">
+        <div class="shell">
+          <div class="section-heading reveal">
+            <div>
+              <div class="service-section-label">
+                <span>02</span>
+                <p>Servicios</p>
+              </div>
+              <h2>Dos maneras de impulsar tu negocio o marca.</h2>
+            </div>
+            <p>
+              Ordenamos lo que pasa dentro con sistemas de gestión y fortalecemos
+              lo que mostrás afuera con páginas web a medida.
+            </p>
+          </div>
+
+          <article class="service-row reveal">
+            <span class="service-id">A</span>
+            <div class="service-title">
+              <p>Sistemas de gestión · Para trabajar mejor</p>
+              <h3>Ordená tu operación</h3>
+            </div>
+            <p class="service-copy">
+              Unificamos la información para que tu equipo trabaje con menos
+              pasos y vos puedas decidir con más claridad.
+            </p>
+            <ul class="service-list">
+              <li>Centralizá ventas, stock, caja y clientes</li>
+              <li>Reducí tareas repetidas y datos duplicados</li>
+              <li>Decidí con reportes claros y actualizados</li>
+            </ul>
+            <a
+              class="service-cta"
+              href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20quiero%20ordenar%20la%20gesti%C3%B3n%20de%20mi%20empresa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quiero ordenar mi gestión <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="service-row reveal">
+            <span class="service-id">B</span>
+            <div class="service-title">
+              <p>Páginas web · Para vender y comunicar mejor</p>
+              <h3>Convertí visitas en consultas</h3>
+            </div>
+            <p class="service-copy">
+              Presentamos tu empresa con claridad y hacemos más simple que cada
+              persona entienda tu propuesta y dé el siguiente paso.
+            </p>
+            <ul class="service-list">
+              <li>Explicá mejor qué hacés y por qué elegirte</li>
+              <li>Mostrá productos y servicios sin fricción</li>
+              <li>Generá consultas desde Google y WhatsApp</li>
+            </ul>
+            <a
+              class="service-cta"
+              href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20quiero%20mejorar%20la%20presencia%20digital%20de%20mi%20empresa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Quiero mejorar mi presencia <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects section-paper" id="proyectos">
+        <div class="shell">
+          <div class="section-heading heading-dark reveal">
+            <div>
+              <div class="portfolio-section-label">
+                <span>03</span>
+                <p>Portfolio</p>
+              </div>
+              <h2>Proyectos que podés ver. Sistemas que ya se usan.</h2>
+            </div>
+            <p>
+              Reunimos páginas publicadas que podés recorrer y software interno
+              que acompaña la operación real de nuestros clientes.
+            </p>
+          </div>
+
+          <p class="project-scroll-hint">Deslizá para recorrer los proyectos →</p>
+
+          <div class="public-project-grid">
+            <article class="project-feature project-featured reveal">
+              <div class="project-visual project-visual-sf">
+                <div class="project-browser-bar" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <small>sigfrancis-web.vercel.app</small>
+                </div>
+                <div class="project-brand-stage">
+                  <span class="project-monogram">SF</span>
+                  <div>
+                    <small>Perfil + formación online</small>
+                    <strong>Francisco Armoa</strong>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- 3 Floating Badges (WOW Effect) -->
-        <div class="floating-badge badge-1 glass-card js-tilt" data-tilt-max="10">
-          <div class="badge-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-          </div>
-          <div>
-            <strong>Stock Inteligente</strong>
-            <span>Control total 24/7</span>
-          </div>
-        </div>
-
-        <div class="floating-badge badge-2 glass-card js-tilt" data-tilt-max="10">
-          <div class="badge-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <div>
-            <strong>100% a Medida</strong>
-            <span>Cero funciones de relleno</span>
-          </div>
-        </div>
-
-        <div class="floating-badge badge-3 glass-card js-tilt" data-tilt-max="10">
-          <div class="badge-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-          </div>
-          <div>
-            <strong>Soporte 24/7</strong>
-            <span>Acompañamiento cercano</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Empresas que confían en nosotros -->
-  <section id="clientes" class="trusted-brands section bg-darker relative overflow-hidden" aria-labelledby="trusted-brands-title">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 id="trusted-brands-title" class="section-title">Empresas que confían en nosotros</h2>
-        <p class="section-desc">PyMEs reales de Paraguay que ya transformaron su gestión con sistemas hechos a medida.</p>
-      </div>
-      <div class="marquee-panel glass-card fade-in-up" style="--delay: 0.15s">
-        <div class="marquee-wrapper">
-          <div class="marquee-track" id="brands-marquee" role="list"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- El problema: Caos vs Control -->
-  <section class="problem section relative">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 class="section-title">El cuaderno y el Excel ya no alcanzan</h2>
-        <p class="section-desc max-w">Es hora de evolucionar. La gestión manual no solo te estresa, te hace perder plata y tiempo todos los días.</p>
-      </div>
-
-      <div class="vs-grid">
-        <!-- El Caos -->
-        <div class="vs-card chaos glass-card fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.1s">
-          <div class="vs-header">
-            <div class="vs-icon error-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-            </div>
-            <h3>La vieja forma</h3>
-          </div>
-          <ul class="vs-list">
-            <li>Planillas desactualizadas y caóticas</li>
-            <li>Pedidos perdidos en mensajes de WhatsApp</li>
-            <li>Stock irreal y ventas perdidas</li>
-            <li>Mucho estrés y cero tiempo libre</li>
-          </ul>
-        </div>
-        
-        <div class="vs-divider fade-in-up" style="--delay: 0.2s">VS</div>
-
-        <!-- El Control -->
-        <div class="vs-card control glass-card fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.3s">
-          <div class="vs-header">
-            <div class="vs-icon success-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            </div>
-            <h3>Con Manageopy</h3>
-          </div>
-          <ul class="vs-list">
-            <li>Datos precisos y actualizados al segundo</li>
-            <li>Todo tu negocio centralizado en una sola app</li>
-            <li>Control de stock exacto e inteligente</li>
-            <li>Decisiones rápidas y escalabilidad real</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Qué podemos construir -->
-  <section id="servicios" class="capabilities section relative">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 class="section-title">Qué podemos construir para vos</h2>
-        <p class="section-desc">Sistemas de gestión a medida y plataformas web pensadas para cómo opera tu negocio en Paraguay.</p>
-      </div>
-      <div class="cap-grid">
-        <article class="cap-item glass-card fade-in-up js-tilt" data-tilt-max="4" style="--delay: 0.1s">
-          <div class="cap-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <span class="cap-label">Operación diaria</span>
-          <h3>Gestión de stock, servicios y clientes</h3>
-          <p class="cap-desc">Controlá inventario, registrá lo que vendés o prestás, y mantené tu base de clientes ordenada.</p>
-          <ul class="cap-features-list">
-            <li>Stock de productos</li>
-            <li>Registro de servicios realizados</li>
-            <li>Base de datos de clientes</li>
-            <li>Fidelización de clientes</li>
-          </ul>
-        </article>
-
-        <article class="cap-item glass-card fade-in-up js-tilt" data-tilt-max="4" style="--delay: 0.15s">
-          <div class="cap-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <span class="cap-label">Agenda y atención</span>
-          <h3>Turnos, agenda y seguimiento</h3>
-          <p class="cap-desc">Organizá la atención del día a día sin choques de horarios ni clientes perdidos en WhatsApp.</p>
-          <ul class="cap-features-list">
-            <li>Servicio de agenda digital</li>
-            <li>Historial de atención</li>
-            <li>Orden operativo del local</li>
-          </ul>
-        </article>
-
-        <article class="cap-item glass-card fade-in-up js-tilt" data-tilt-max="4" style="--delay: 0.2s">
-          <div class="cap-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          </div>
-          <span class="cap-label">Multiempresa</span>
-          <h3>Caja, créditos, compras y ventas</h3>
-          <p class="cap-desc">Una plataforma completa para administrar la operación financiera y comercial de una o varias empresas.</p>
-          <ul class="cap-features-list">
-            <li>Caja del día</li>
-            <li>Operaciones a crédito</li>
-            <li>Compras y ventas registradas</li>
-            <li>Clientes y proveedores</li>
-            <li>Presupuestos y reportes avanzados</li>
-            <li>RR.HH. básico / salarios</li>
-          </ul>
-        </article>
-
-        <article class="cap-item glass-card fade-in-up js-tilt" data-tilt-max="4" style="--delay: 0.25s">
-          <div class="cap-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <span class="cap-label">Presencia digital</span>
-          <h3>Webs, catálogos y compra online</h3>
-          <p class="cap-desc">Sitios interactivos para mostrar productos, guiar la compra y conectar con atención personalizada.</p>
-          <ul class="cap-features-list">
-            <li>Catálogo de productos</li>
-            <li>Flujo de compra por web</li>
-            <li>Redirección a atención personalizada</li>
-            <li>Experiencia clara para el cliente</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Casos reales -->
-  <section id="casos" class="cases section">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 class="section-title">Casos reales</h2>
-        <p class="section-desc">Proyectos entregados a negocios de Paraguay: sistemas a medida y plataformas digitales pensadas para operar de verdad.</p>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Sistema Multiempresa (destacado) -->
-        <article class="case-card glass-card case-featured multiempresa fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.05s">
-          <div class="case-header">
-            <div class="case-brand">
-              <div class="case-brand-mark" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div class="project-story">
+                <div class="project-card-meta">
+                  <p class="project-counter">Plataforma educativa</p>
+                  <span><i aria-hidden="true"></i> Online</span>
+                </div>
+                <h3>Sigfrancis</h3>
+                <div class="project-shift">
+                  <div>
+                    <span>Necesidad</span>
+                    <p>Reunir su trayectoria, contenidos y cursos gratuitos o de pago.</p>
+                  </div>
+                  <div class="project-shift-result">
+                    <span>Resultado</span>
+                    <p>Una plataforma propia, clara y preparada para ampliar su oferta.</p>
+                  </div>
+                </div>
+                <a href="https://sigfrancis-web.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Recorrer el proyecto <span aria-hidden="true">↗</span>
+                </a>
               </div>
+            </article>
+
+            <article class="project-feature project-compact reveal">
+              <div class="project-visual project-visual-lapidas">
+                <div class="project-browser-bar" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <small>lapidas-py.vercel.app</small>
+                </div>
+                <div class="project-brand-stage">
+                  <img src="/src/Marcas/lapidaspy.webp" alt="Lápidas PY" />
+                </div>
+              </div>
+              <div class="project-story">
+                <div class="project-card-meta">
+                  <p class="project-counter">Catálogo guiado</p>
+                  <span><i aria-hidden="true"></i> Online</span>
+                </div>
+                <h3>Lápidas PY</h3>
+                <div class="project-shift">
+                  <div>
+                    <span>Necesidad</span>
+                    <p>Explicar opciones con claridad en una decisión sensible.</p>
+                  </div>
+                  <div class="project-shift-result">
+                    <span>Resultado</span>
+                    <p>Consultas mejor orientadas desde un catálogo simple.</p>
+                  </div>
+                </div>
+                <a href="https://lapidas-py.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Recorrer el proyecto <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <article class="project-feature project-compact reveal">
+              <div class="project-visual project-visual-lafa">
+                <div class="project-browser-bar" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                  <small>lafacocinas.vercel.app</small>
+                </div>
+                <div class="project-brand-stage">
+                  <img src="/src/Marcas/lafa-cocinas.webp" alt="Lafa Cocinas" />
+                </div>
+              </div>
+              <div class="project-story">
+                <div class="project-card-meta">
+                  <p class="project-counter">Vitrina comercial</p>
+                  <span><i aria-hidden="true"></i> Online</span>
+                </div>
+                <h3>Lafa Cocinas</h3>
+                <div class="project-shift">
+                  <div>
+                    <span>Necesidad</span>
+                    <p>Mostrar productos de forma ordenada y fácil de compartir.</p>
+                  </div>
+                  <div class="project-shift-result">
+                    <span>Resultado</span>
+                    <p>Una propuesta comercial accesible desde cualquier dispositivo.</p>
+                  </div>
+                </div>
+                <a href="https://lafacocinas.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  Recorrer el proyecto <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <div class="systems-heading reveal" id="sistemas">
+            <div>
+              <div class="systems-section-label">
+                <span aria-hidden="true"></span>
+                <p>Sistemas internos</p>
+              </div>
+              <h3>Trabajo que no es público, pero sí está en uso.</h3>
+            </div>
+            <p>
+              Resguardamos la información de cada empresa. Por eso mostramos
+              qué conecta cada sistema sin exponer datos de sus operaciones.
+            </p>
+          </div>
+
+          <div class="system-cases">
+            <article class="system-case reveal">
+              <div class="system-case-head">
+                <span><i aria-hidden="true"></i> Sistema privado en uso</span>
+                <img src="/src/Marcas/logoMonaco90.webp" alt="Monaco90" />
+              </div>
+              <small>Gestión multiempresa</small>
+              <h4>Monaco90</h4>
+              <p>
+                Centraliza varias empresas y conecta la operación comercial,
+                financiera y de recursos humanos en un mismo entorno.
+              </p>
+              <strong>Áreas conectadas</strong>
+              <ul>
+                <li>Ventas, compras y caja</li>
+                <li>Stock y proveedores</li>
+                <li>Créditos y presupuestos</li>
+                <li>Recursos humanos</li>
+                <li>Usuarios, empresas y reportes</li>
+              </ul>
+            </article>
+
+            <article class="system-case reveal">
+              <div class="system-case-head">
+                <span><i aria-hidden="true"></i> Sistema privado en uso</span>
+                <img src="/src/Marcas/NenukosBarber.webp" alt="Nenukos Barber" />
+              </div>
+              <small>Operación especializada</small>
+              <h4>Nenukos Barber</h4>
+              <p>
+                Adapta la gestión al ritmo de la barbería y reúne agenda,
+                servicios, clientes, productos y seguimiento comercial.
+              </p>
+              <strong>Áreas conectadas</strong>
+              <ul>
+                <li>Agenda y disponibilidad</li>
+                <li>Servicios y productos</li>
+                <li>Clientes y fidelización</li>
+                <li>Stock y reportes</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials" aria-labelledby="testimonials-title">
+        <div class="shell">
+          <div class="testimonials-heading reveal">
+            <div>
+              <div class="testimonials-section-label">
+                <span aria-hidden="true">“</span>
+                <p>Confianza / Clientes</p>
+              </div>
+              <h2 id="testimonials-title">Lo que dicen quienes ya trabajaron con nosotros.</h2>
+            </div>
+            <div>
+              <p>
+                Tres experiencias sobre una misma forma de trabajar: escuchar,
+                mostrar avances y construir algo realmente útil.
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="testimonial-card reveal">
+              <div class="testimonial-person">
+                <div class="testimonial-photo testimonial-photo-esteban">
+                  <img src="/src/Personas/esteban-lopez.webp" alt="Esteban López" />
+                </div>
+                <div>
+                  <h3>Esteban López</h3>
+                  <p>Gerente Comercial · EMCOPY S.A. y LEPCO S.A.</p>
+                </div>
+              </div>
+              <blockquote>
+                “Manageopy entendió cómo se conectan nuestras empresas y nos
+                propuso una solución clara para ordenar la información y
+                acompañar el crecimiento sin complicar la operación.”
+              </blockquote>
+            </article>
+
+            <article class="testimonial-card reveal">
+              <div class="testimonial-person">
+                <div class="testimonial-photo testimonial-photo-albert">
+                  <img src="/src/Personas/albert-sosa.webp" alt="Albert Sosa" />
+                </div>
+                <div>
+                  <h3>Albert Sosa</h3>
+                  <p>Nenukos Barber · Barbería</p>
+                </div>
+              </div>
+              <blockquote>
+                “Buscábamos una herramienta que se adaptara al ritmo real de la
+                barbería. El proceso fue cercano, vimos avances y cada decisión
+                se trabajó pensando en nuestro equipo.”
+              </blockquote>
+            </article>
+
+            <article class="testimonial-card reveal">
+              <div class="testimonial-person">
+                <div class="testimonial-photo testimonial-photo-francisco">
+                  <img src="/src/Personas/sigfrancis.webp" alt="Retrato ilustrado de Francisco Armoa" />
+                </div>
+                <div>
+                  <h3>Francisco Armoa</h3>
+                  <p>Diseñador y game designer paraguayo</p>
+                </div>
+              </div>
+              <blockquote>
+                “Necesitaba reunir mi perfil, mi trabajo y mis cursos en un solo
+                lugar. Manageopy convirtió esa idea en una experiencia clara,
+                con identidad propia y fácil de recorrer.”
+              </blockquote>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process" id="proceso">
+        <div class="shell process-layout">
+          <div class="process-intro reveal">
+            <div class="process-heading">
+              <div class="process-section-label">
+                <span aria-hidden="true">04</span>
+                <p>Proceso</p>
+              </div>
+              <h2>Un proceso claro, sin esperar al final para ver resultados.</h2>
+            </div>
+            <p>
+              En cada etapa sabés qué estamos haciendo, qué necesitamos de vos
+              y qué queda decidido antes de avanzar.
+            </p>
+          </div>
+
+          <ol class="process-steps">
+            <li class="reveal">
+              <div class="process-step-top">
+                <span>01</span>
+                <small>Entender</small>
+              </div>
+              <h3>Diagnóstico claro</h3>
+              <p>
+                Conversamos sobre cómo trabajás, qué querés mejorar y dónde
+                aparece hoy la dificultad.
+              </p>
+              <div class="process-result">
+                <small>Queda definido</small>
+                <strong>El problema y el objetivo prioritario.</strong>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="process-step-top">
+                <span>02</span>
+                <small>Decidir</small>
+              </div>
+              <h3>Alcance y prioridades</h3>
+              <p>
+                Elegimos qué conviene resolver primero y organizamos el proyecto
+                en etapas realistas.
+              </p>
+              <div class="process-result">
+                <small>Queda definido</small>
+                <strong>Qué haremos, en qué orden y con qué inversión.</strong>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="process-step-top">
+                <span>03</span>
+                <small>Construir</small>
+              </div>
+              <h3>Diseño y desarrollo</h3>
+              <p>
+                Construimos por partes y te mostramos avances navegables para
+                validar antes de seguir.
+              </p>
+              <div class="process-result">
+                <small>Vas viendo</small>
+                <strong>Una solución real, no solamente promesas.</strong>
+              </div>
+            </li>
+            <li class="reveal">
+              <div class="process-step-top">
+                <span>04</span>
+                <small>Acompañar</small>
+              </div>
+              <h3>Puesta en marcha</h3>
+              <p>
+                Publicamos o implementamos, capacitamos si hace falta y
+                acompañamos los primeros pasos.
+              </p>
+              <div class="process-result">
+                <small>Seguimos con</small>
+                <strong>Soporte y mejoras según el uso real.</strong>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="reasons">
+        <div class="shell">
+          <div class="reasons-heading reveal">
+            <div>
+              <div class="reasons-section-label">
+                <span aria-hidden="true">05</span>
+                <p>Por qué Manageopy</p>
+              </div>
+              <h2>No necesitás más tecnología. Necesitás la correcta para crecer.</h2>
+            </div>
+            <p>
+              Unimos estrategia, UX/UI y desarrollo para crear sistemas y
+              páginas web que respondan a cómo trabajás, vendés y querés
+              avanzar.
+            </p>
+          </div>
+
+          <div class="reason-grid">
+            <article class="reveal">
+              <div class="reason-card-top">
+                <span>01</span>
+                <small>Decisiones con sentido</small>
+              </div>
+              <h3>Entendemos antes de construir</h3>
+              <p>
+                Traducimos tu objetivo en prioridades claras antes de hablar de
+                funciones, pantallas o tecnología.
+              </p>
+              <strong>Invertís en lo que realmente necesitás.</strong>
+            </article>
+            <article class="reveal">
+              <div class="reason-card-top">
+                <span>02</span>
+                <small>Contexto local</small>
+              </div>
+              <h3>Diseñamos para la realidad paraguaya</h3>
+              <p>
+                Consideramos desde el inicio la venta por WhatsApp, el crédito,
+                las sucursales y la atención cercana de cada negocio o marca.
+              </p>
+              <strong>La solución se adapta a vos, no al revés.</strong>
+            </article>
+            <article class="reveal">
+              <div class="reason-card-top">
+                <span>03</span>
+                <small>Comunicación directa</small>
+              </div>
+              <h3>Hablás con quienes hacen el trabajo</h3>
+              <p>
+                Negocio, diseño y desarrollo participan de la misma
+                conversación durante todo el proyecto.
+              </p>
+              <strong>Menos vueltas y decisiones más rápidas.</strong>
+            </article>
+            <article class="reveal">
+              <div class="reason-card-top">
+                <span>04</span>
+                <small>Evolución acompañada</small>
+              </div>
+              <h3>Avanzamos por etapas, con vos</h3>
+              <p>
+                Lanzamos una primera versión útil, vemos cómo funciona en la
+                práctica y sumamos mejoras cuando aportan valor.
+              </p>
+              <strong>Empezás bien y seguís creciendo con una base sólida.</strong>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="equipo">
+        <div class="shell about-layout">
+          <div class="about-copy reveal">
+            <div class="about-section-label">
+              <span aria-hidden="true">M</span>
+              <p>El equipo detrás de Manageopy</p>
+            </div>
+            <h2>Un equipo paraguayo, presente en cada decisión.</h2>
+            <p>
+              Conectamos estrategia, UX/UI y desarrollo desde la primera
+              conversación. Así entendemos mejor tu realidad y convertimos cada
+              decisión en una solución clara, útil y posible de mantener.
+            </p>
+            <a
+              href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20quiero%20conocer%20al%20equipo%20y%20conversar%20sobre%20mi%20proyecto."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hablar directamente con el equipo <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="about-card reveal">
+            <div class="about-identity">
+              <img src="/src/Logo/LogoManageopy-sm.png" alt="" width="44" height="44" />
               <div>
-                <span class="case-tag">Producto Manageopy</span>
-                <h3 class="case-name">Sistema Multiempresa</h3>
+                <strong>Manageopy</strong>
+                <span>Equipo digital · Asunción, Paraguay</span>
               </div>
+              <small><i aria-hidden="true"></i> Trato directo</small>
             </div>
-            <span class="metric-badge success">Operación completa</span>
-          </div>
-          <p class="case-lead">Una plataforma integral para empresas que necesitan controlar caja, stock, ventas, créditos y equipo desde un solo lugar.</p>
-          <div class="case-content case-content-split">
-            <div class="problem-box">
-              <span class="label text-error">Problema</span>
-              <p>Operaciones dispersas entre Excel, cuadernos y chats: sin visibilidad de caja, stock, créditos ni proveedores en tiempo real.</p>
+            <div class="about-card-heading">
+              <span>Una misma visión</span>
+              <h3>Tres capacidades que trabajan juntas.</h3>
             </div>
-            <div class="solution-box">
-              <span class="label text-accent">Solución</span>
-              <p>Sistema multiempresa con módulos conectados para administrar el día a día operativo y financiero del negocio.</p>
-            </div>
+            <ol class="about-capabilities">
+              <li>
+                <span>01</span>
+                <div>
+                  <strong>Estrategia de negocio</strong>
+                  <p>Definimos qué problema conviene resolver primero.</p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <strong>Experiencia y diseño</strong>
+                  <p>Hacemos que la solución sea clara para quien la usa.</p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <strong>Desarrollo y evolución</strong>
+                  <p>Construimos una base sólida y la mejoramos con vos.</p>
+                </div>
+              </li>
+            </ol>
+            <p class="about-card-note">
+              La idea, el diseño y el desarrollo avanzan juntos.
+            </p>
           </div>
-          <ul class="case-features">
-            <li>Caja del día</li>
-            <li>Operaciones a crédito</li>
-            <li>Stock de productos</li>
-            <li>Compras y ventas</li>
-            <li>Reportes avanzados</li>
-            <li>Gestión de presupuestos</li>
-            <li>RR.HH. básico / salarios</li>
-            <li>Clientes y proveedores</li>
-          </ul>
-          <div class="case-result-box text-gradient">
-            <strong>Resultado:</strong> Control centralizado de la operación, con datos claros para decidir y escalar sin caos administrativo.
-          </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- Nenukos Barber -->
-        <article class="case-card glass-card nenukos fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.15s">
-          <div class="case-header">
-            <div class="case-brand">
-              <div class="case-logo-wrap">
-                <img src="/src/Marcas/NenukosBarber.webp" alt="Nenukos Barber" class="case-logo" width="48" height="48" loading="lazy" />
-              </div>
-              <div>
-                <span class="case-tag">Barbería</span>
-                <h3 class="case-name">Nenukos Barber</h3>
-              </div>
+      <section class="faq section-paper">
+        <div class="shell faq-layout">
+          <div class="faq-intro reveal">
+            <div class="faq-section-label">
+              <span aria-hidden="true">06</span>
+              <p>Preguntas frecuentes</p>
             </div>
-            <span class="metric-badge danger">Gestión integral</span>
+            <h2>Lo que conviene saber antes de empezar.</h2>
+            <p>
+              No hace falta llegar con todo definido. Estas respuestas te ayudan
+              a entender cómo podemos trabajar juntos y qué podés esperar del
+              proceso.
+            </p>
+            <a
+              href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20tengo%20una%20consulta%20sobre%20mi%20proyecto."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ¿Tu duda no está acá? Escribinos <span aria-hidden="true">↗</span>
+            </a>
           </div>
-          <div class="case-content">
-            <div class="problem-box">
-              <span class="label text-error">Problema</span>
-              <p>Agenda, clientes, servicios y stock manejados por separado: difícil fidelizar y tener reportes claros del negocio.</p>
-            </div>
-            <div class="solution-box">
-              <span class="label text-accent">Solución</span>
-              <p>Sistema de gestión a medida para barbería: stock, servicios realizados, agenda, clientes, reportes y fidelización.</p>
-            </div>
-          </div>
-          <ul class="case-features">
-            <li>Stock de productos</li>
-            <li>Registro de servicios</li>
-            <li>Agenda</li>
-            <li>Base de clientes</li>
-            <li>Reportes</li>
-            <li>Fidelización</li>
-          </ul>
-          <div class="case-result-box text-gradient">
-            <strong>Resultado:</strong> Operación ordenada de punta a punta: turnos, clientes y ventas de productos bajo control.
-          </div>
-        </article>
 
-        <!-- Lápidas PY -->
-        <article class="case-card glass-card lapidas fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.25s">
-          <div class="case-header">
-            <div class="case-brand">
-              <div class="case-logo-wrap">
-                <img src="/src/Marcas/lapidaspy.webp" alt="Lápidas PY" class="case-logo" width="48" height="48" loading="lazy" />
-              </div>
-              <div>
-                <span class="case-tag">Comercio digital</span>
-                <h3 class="case-name">Lápidas PY</h3>
-              </div>
-            </div>
-            <span class="metric-badge warning">Web interactiva</span>
+          <div class="faq-list reveal">
+            <details>
+              <summary>
+                <span>01</span>
+                <strong>¿Tengo que saber si necesito una web o un sistema?</strong>
+              </summary>
+              <p>
+                No. Contanos qué querés mejorar: ordenar un proceso, controlar
+                mejor tu operación, presentar tus servicios o generar más
+                consultas. Primero entendemos el objetivo y después te
+                recomendamos el camino adecuado.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>02</span>
+                <strong>¿El sistema puede adaptarse a cómo se trabaja en Paraguay?</strong>
+              </summary>
+              <p>
+                Sí. Podemos contemplar ventas a crédito, caja, stock, compras,
+                sucursales, proveedores, recursos humanos y flujos que hoy se
+                coordinan por WhatsApp o planillas. La solución parte de tu
+                operación real.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>03</span>
+                <strong>¿También trabajan con profesionales y marcas personales?</strong>
+              </summary>
+              <p>
+                Sí. Desarrollamos sitios para presentar servicios, trayectoria,
+                cursos gratuitos o de pago y otros contenidos. El objetivo es
+                que la web comunique confianza y facilite el próximo paso:
+                consultar, reservar o comprar.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>04</span>
+                <strong>¿Podemos empezar con algo pequeño y mejorarlo después?</strong>
+              </summary>
+              <p>
+                Sí. Priorizamos una primera versión útil y bien resuelta para que
+                puedas empezar a usarla. Luego sumamos funciones, contenidos o
+                integraciones según lo que el negocio realmente necesite.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>05</span>
+                <strong>¿Cómo se definen la inversión y el tiempo de trabajo?</strong>
+              </summary>
+              <p>
+                Después de una primera conversación definimos alcance,
+                prioridades y etapas. Con eso preparamos una propuesta clara con
+                entregables, tiempos y forma de inversión, sin agregar funciones
+                que no aporten valor.
+              </p>
+            </details>
+            <details>
+              <summary>
+                <span>06</span>
+                <strong>¿Qué acompañamiento recibo después del lanzamiento?</strong>
+              </summary>
+              <p>
+                Te acompañamos durante la puesta en marcha y acordamos el soporte
+                según el proyecto. También podemos analizar el uso real,
+                corregir fricciones y planificar nuevas mejoras por etapas.
+              </p>
+            </details>
           </div>
-          <div class="case-content">
-            <div class="problem-box">
-              <span class="label text-error">Problema</span>
-              <p>Proceso de consulta y compra poco claro para el cliente, con fricción para llegar a una atención personalizada.</p>
-            </div>
-            <div class="solution-box">
-              <span class="label text-accent">Solución</span>
-              <p>Página web interactiva para gestionar la compra de lápidas en Paraguay, con redirección a atención personalizada.</p>
-            </div>
-          </div>
-          <ul class="case-features">
-            <li>Experiencia web guiada</li>
-            <li>Gestión de compras</li>
-            <li>Atención personalizada</li>
-          </ul>
-          <div class="case-result-box text-gradient">
-            <strong>Resultado:</strong> Canal digital claro para consultar y comprar, conectando al cliente con atención humana cuando lo necesita.
-          </div>
-        </article>
+        </div>
+      </section>
 
-        <!-- New Galley -->
-        <article class="case-card glass-card galley fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.35s">
-          <div class="case-header">
-            <div class="case-brand">
-              <div class="case-logo-wrap">
-                <img src="/src/Marcas/newgalley.webp" alt="New Galley" class="case-logo" width="48" height="48" loading="lazy" />
-              </div>
-              <div>
-                <span class="case-tag">Catálogo online</span>
-                <h3 class="case-name">New Galley</h3>
-              </div>
+      <section class="closing">
+        <div class="shell closing-layout">
+          <div class="closing-copy">
+            <div class="closing-section-label">
+              <span aria-hidden="true">↗</span>
+              <p>¿Tenés algo en mente?</p>
             </div>
-            <span class="metric-badge info">Catálogo + venta</span>
+            <h2>Contanos qué querés ordenar, vender o hacer crecer.</h2>
+            <p>
+              No necesitás definir la solución ni hablar en términos técnicos.
+              Contanos qué hoy te frena o qué oportunidad querés aprovechar y
+              vemos juntos por dónde empezar.
+            </p>
           </div>
-          <div class="case-content">
-            <div class="problem-box">
-              <span class="label text-error">Problema</span>
-              <p>Mostrar productos y cerrar ventas online sin una vitrina digital ordenada ni un flujo claro de compra.</p>
-            </div>
-            <div class="solution-box">
-              <span class="label text-accent">Solución</span>
-              <p>Sitio web con catálogo de productos y redireccionamiento para culminar la compra de forma simple desde la web.</p>
-            </div>
+          <div class="closing-actions">
+            <p class="closing-actions-label">Podés escribirnos si...</p>
+            <ul class="closing-prompts" aria-label="Motivos para conversar">
+              <li><span aria-hidden="true">✓</span> Querés ordenar la gestión de tu negocio.</li>
+              <li><span aria-hidden="true">✓</span> Necesitás una web que genere consultas.</li>
+              <li><span aria-hidden="true">✓</span> Vendés cursos, servicios o tu experiencia.</li>
+              <li><span aria-hidden="true">✓</span> Un proceso manual te está quitando tiempo.</li>
+            </ul>
+            <a
+              href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20tengo%20una%20idea%20o%20necesidad%20y%20quiero%20contarles%20qu%C3%A9%20necesito%20mejorar."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contarles mi idea por WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+            <p class="closing-direct-note">
+              Hablás directamente con el equipo de Manageopy.
+            </p>
           </div>
-          <ul class="case-features">
-            <li>Catálogo de productos</li>
-            <li>Flujo de compra web</li>
-            <li>Redirección comercial</li>
-          </ul>
-          <div class="case-result-box text-gradient">
-            <strong>Resultado:</strong> Presencia digital profesional para exhibir el catálogo y convertir visitas en compras.
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        </div>
+      </section>
+    </main>
 
-  <!-- Cómo trabajamos -->
-  <section class="process section relative">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 class="section-title">Cómo trabajamos</h2>
-        <p class="section-desc">Un proceso claro, de punta a punta: entendemos tu operación, construimos la herramienta exacta y te acompañamos al usarla.</p>
-      </div>
-      <div class="process-timeline-wrapper">
-        <div class="timeline-line" aria-hidden="true"></div>
-        <div class="process-grid">
-          <article class="process-card glass-card fade-in-up js-tilt" data-tilt-max="3" style="--delay: 0.1s">
-            <div class="step-badge">01</div>
-            <div class="step-icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <span class="step-label">Diagnóstico</span>
-            <h3>Entendemos tu operación</h3>
-            <p>Hablamos de stock, caja, turnos, ventas o cómo llegás a tus clientes. Detectamos qué te traba hoy y qué tiene que resolver el sistema.</p>
-          </article>
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-summary">
+          <a class="brand footer-brand" href="#inicio">
+            <img src="/src/Logo/LogoManageopy-sm.png" alt="" width="30" height="30" />
+            <span>manageopy</span>
+          </a>
+          <p>Tecnología para PyMEs que quieren ordenar, vender y crecer.</p>
+          <span>Asunción, Paraguay · Trabajamos con empresas de todo el país.</span>
+        </div>
 
-          <article class="process-card glass-card fade-in-up js-tilt" data-tilt-max="3" style="--delay: 0.15s">
-            <div class="step-badge">02</div>
-            <div class="step-icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-            </div>
-            <span class="step-label">Diseño</span>
-            <h3>Definimos la solución exacta</h3>
-            <p>Armamos el alcance: paneles de gestión, agenda, reportes, catálogo web o multiempresa. Solo lo que vas a usar, nada de relleno.</p>
-          </article>
+        <div class="footer-links" aria-label="Servicios">
+          <p>Servicios</p>
+          <a href="#servicios">Sistemas de gestión</a>
+          <a href="#servicios">Páginas web</a>
+          <a href="#sistemas">Sistemas internos</a>
+        </div>
 
-          <article class="process-card glass-card fade-in-up js-tilt" data-tilt-max="3" style="--delay: 0.2s">
-            <div class="step-badge">03</div>
-            <div class="step-icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <span class="step-label">Desarrollo</span>
-            <h3>Construimos e iteramos</h3>
-            <p>Desarrollamos el sistema o la web, te mostramos avances y ajustamos con tu feedback. Pensado para usarse en celular y PC.</p>
-          </article>
+        <div class="footer-links" aria-label="Navegación">
+          <p>Explorar</p>
+          <a href="#servicios">Servicios</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#proceso">Proceso</a>
+          <a href="#equipo">Equipo</a>
+        </div>
 
-          <article class="process-card glass-card fade-in-up js-tilt" data-tilt-max="3" style="--delay: 0.25s">
-            <div class="step-badge">04</div>
-            <div class="step-icon-box">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <span class="step-label">Lanzamiento</span>
-            <h3>Puesta en marcha y soporte</h3>
-            <p>Te ayudamos a desplegar, capacitar al equipo y salir a producción. Seguimos cerca para dudas, ajustes y mejora continua.</p>
-          </article>
+        <div class="footer-links" aria-label="Contacto">
+          <p>Conversemos</p>
+          <a href="https://www.instagram.com/manageopy/" target="_blank" rel="noopener noreferrer">
+            Instagram ↗
+          </a>
+          <a
+            href="https://wa.me/595986942192?text=Hola%20Manageopy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp ↗
+          </a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Diferenciales (Por qué Manageopy) -->
-  <section class="why section bg-darker">
-    <div class="container">
-      <div class="section-header text-center fade-in-up">
-        <h2 class="section-title">Por qué elegir Manageopy</h2>
-        <p class="section-desc">No vendemos software genérico: construimos herramientas reales para operar, vender y crecer en Paraguay.</p>
+      <div class="shell footer-bottom">
+        <span>© <span id="year"></span> Manageopy</span>
+        <span>Sistemas de gestión y páginas web para PyMEs del Paraguay</span>
       </div>
-      <div class="why-grid">
-        <article class="why-card glass-card fade-in-up js-tilt" data-tilt-max="2">
-          <div class="why-badge-glow"></div>
-          <div class="why-icon why-icon-accent">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <span class="why-label">A medida</span>
-          <h3>Exactamente lo que tu negocio necesita</h3>
-          <p>Stock, agenda, caja, créditos, reportes, clientes o fidelización: armamos el sistema según tu operación real, sin módulos de relleno que nadie usa.</p>
-        </article>
+    </footer>
 
-        <article class="why-card glass-card fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.1s">
-          <div class="why-badge-glow"></div>
-          <div class="why-icon why-icon-success">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          </div>
-          <span class="why-label">Gestión + digital</span>
-          <h3>Sistemas internos y presencia en la web</h3>
-          <p>Desde paneles de gestión operativa hasta catálogos online y webs de compra con atención personalizada. Cubrimos el día a día y también cómo vendés.</p>
-        </article>
+    <a
+      class="whatsapp-fab"
+      href="https://wa.me/595986942192?text=Hola%20Manageopy%20%F0%9F%91%8B%20Vi%20su%20p%C3%A1gina%20y%20me%20gustar%C3%ADa%20conversar%20sobre%20un%20proyecto%20para%20mi%20negocio%20o%20marca.%20Necesito%20ayuda%20con%20una%20p%C3%A1gina%20web%2C%20un%20sistema%20de%20gesti%C3%B3n%20o%20ambos.%20%C2%BFPodr%C3%ADan%20orientarme%20sobre%20cu%C3%A1l%20ser%C3%ADa%20el%20mejor%20primer%20paso%3F"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Conversar con Manageopy por WhatsApp"
+    >
+      <img src="/whatsapp.svg" alt="" width="28" height="28" />
+    </a>
 
-        <article class="why-card glass-card fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.15s">
-          <div class="why-badge-glow"></div>
-          <div class="why-icon why-icon-warning">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-          <span class="why-label">Local</span>
-          <h3>Desarrollo paraguayo, cerca tuyo</h3>
-          <p>Entendemos cómo se trabaja acá: WhatsApp, créditos, múltiples locales y atención personalizada. Te acompañamos en implementación y soporte, sin distancia ni desconexión.</p>
-        </article>
-
-        <article class="why-card glass-card fade-in-up js-tilt" data-tilt-max="2" style="--delay: 0.2s">
-          <div class="why-badge-glow"></div>
-          <div class="why-icon why-icon-info">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-          </div>
-          <span class="why-label">Escalable</span>
-          <h3>De un local a varias empresas</h3>
-          <p>Ya construimos soluciones para barberías, comercios y un sistema multiempresa con caja, stock, presupuestos, proveedores y RR.HH. básico. Crece con vos.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section id="contacto" class="cta-final section relative overflow-hidden">
-    <div class="cta-container glass-card fade-in-up relative z-10 mx-auto text-center js-tilt" data-tilt-max="1">
-      <div class="cta-glow" aria-hidden="true"></div>
-      <h2 class="cta-title">¿Tu negocio tiene un problema de gestión?</h2>
-      <p class="cta-desc">Contanoslo y te decimos cómo lo resolvemos. Así de simple.</p>
-      <a href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20mi%20negocio%20tiene%20un%20problema%20de%20gesti%C3%B3n.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
-        class="btn-primary btn-large btn-glow cta-btn mx-auto" target="_blank" rel="noopener noreferrer">Contanos tu problema
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <a href="#" class="logo">
-          <img src="/src/Logo/LogoManageopy-sm.png" alt="Manageopy" class="logo-img" width="32" height="32" />
-          <span>anageopy</span>
-        </a>
-        <p>Gestiona tu Negocio De Forma Inteligente</p>
-      </div>
-      <div class="footer-links">
-        <h4>Contacto</h4>
-        <a href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20mi%20negocio%20tiene%20un%20problema%20de%20gesti%C3%B3n.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n." class="flex-link" target="_blank" rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
-          WhatsApp
-        </a>
-        <a href="https://www.instagram.com/manageopy/"
-          class="flex-link js-instagram-link"
-          target="_blank"
-          rel="noopener noreferrer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-      </div>
-    </div>
-    <div class="footer-bottom text-center">
-      <p>&copy; <span id="year"></span> Manageopy. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp (mobile) -->
-  <a href="https://wa.me/595986942192?text=Hola%20Manageopy%2C%20mi%20negocio%20tiene%20un%20problema%20de%20gesti%C3%B3n.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n."
-    class="whatsapp-fab"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Contactar por WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-  </a>
-
-  <!-- Vanilla Tilt JS (via CDN for performance) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-  <script type="module" src="/src/main.js"></script>
-</body>
-
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
