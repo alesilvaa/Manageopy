@@ -7851,3 +7851,390 @@ body {
     transition: none;
   }
 }
+
+/* Premium motion system */
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-spring: cubic-bezier(0.2, 0.85, 0.25, 1.12);
+}
+
+@keyframes premium-header-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premium-rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premium-title-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(115%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premium-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.975);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ambient-drift {
+  0% {
+    transform: translate3d(-3%, -2%, 0) scale(0.95);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate3d(7%, 5%, 0) scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@keyframes faq-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.js .site-header {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.js.motion-ready .site-header {
+  animation: premium-header-in 650ms var(--motion-ease) 40ms both;
+}
+
+.hero {
+  isolation: isolate;
+}
+
+.hero > .shell {
+  position: relative;
+  z-index: 2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 6%;
+  right: 2%;
+  width: min(46rem, 70vw);
+  height: min(46rem, 70vw);
+  background: radial-gradient(circle, rgba(47, 92, 255, 0.2), rgba(47, 92, 255, 0) 68%);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ambient-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero-title-line {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-title-line > span,
+.hero-title-line > em {
+  display: block;
+}
+
+.js .hero .hero-copy.reveal,
+.js .hero .work-index.reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+.js .hero-copy .kicker,
+.js .hero-copy .hero-lead,
+.js .hero-copy .hero-actions,
+.js .hero-title-line > span,
+.js .hero-title-line > em,
+.js .hero .work-index {
+  opacity: 0;
+}
+
+.js.motion-ready .hero-copy .kicker {
+  animation: premium-rise 650ms var(--motion-ease) 160ms both;
+}
+
+.js.motion-ready .hero-title-line:first-child > span {
+  animation: premium-title-reveal 850ms var(--motion-ease) 230ms both;
+}
+
+.js.motion-ready .hero-title-line:nth-child(2) > em {
+  animation: premium-title-reveal 850ms var(--motion-ease) 340ms both;
+}
+
+.js.motion-ready .hero-copy .hero-lead {
+  animation: premium-rise 720ms var(--motion-ease) 500ms both;
+}
+
+.js.motion-ready .hero-copy .hero-actions {
+  animation: premium-rise 720ms var(--motion-ease) 590ms both;
+}
+
+.js.motion-ready .hero .work-index {
+  animation: premium-panel-in 900ms var(--motion-ease) 430ms both;
+}
+
+.js .reveal {
+  filter: blur(5px);
+  transform: translateY(26px) scale(0.992);
+  transition:
+    opacity 820ms var(--motion-ease) var(--reveal-delay, 0ms),
+    filter 820ms var(--motion-ease) var(--reveal-delay, 0ms),
+    transform 820ms var(--motion-ease) var(--reveal-delay, 0ms),
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.js .reveal.is-visible {
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+}
+
+.main-nav a.is-active {
+  color: #fff;
+}
+
+.main-nav a.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.button,
+.header-contact,
+.service-card .service-cta,
+.project-open,
+.closing a,
+.faq-intro > a {
+  transition:
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms var(--motion-spring);
+}
+
+.button:active,
+.header-contact:active,
+.service-card .service-cta:active,
+.project-open:active,
+.closing a:active,
+.faq-intro > a:active {
+  transform: scale(0.975);
+}
+
+.service-card,
+.testimonial-card,
+.system-case {
+  transition:
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms var(--motion-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .testimonial-card:hover,
+  .system-case:hover {
+    border-color: rgba(125, 151, 255, 0.42);
+    box-shadow: 0 1.2rem 2.8rem rgba(5, 11, 31, 0.18);
+    transform: translateY(-4px);
+  }
+
+  .client-marquee .client-logo {
+    transition:
+      filter 260ms ease,
+      opacity 260ms ease,
+      transform 260ms var(--motion-ease);
+  }
+
+  .client-marquee .client-logo:hover {
+    filter: saturate(1.08);
+    transform: translateY(-3px) scale(1.025);
+  }
+}
+
+.projects .project-visual-preview .project-preview {
+  object-position: top center;
+  transition:
+    object-position 1800ms var(--motion-ease),
+    transform 600ms var(--motion-ease),
+    filter 400ms ease;
+}
+
+.projects .project-feature:hover .project-preview {
+  object-position: center 72%;
+  transform: scale(1.018);
+}
+
+.process-steps {
+  --process-progress: inherit;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.process-steps::before,
+.process-steps::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+}
+
+.process-steps::before {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.process-steps::after {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 1rem rgba(255, 255, 255, 0.38);
+  transform: scaleX(var(--process-progress, 0));
+  transform-origin: left;
+  transition: transform 100ms linear;
+}
+
+.process-steps li,
+.process-steps li:last-child {
+  transition:
+    background-color 420ms ease,
+    border-color 420ms ease,
+    box-shadow 420ms ease,
+    transform 420ms var(--motion-ease);
+}
+
+.process-steps li::before {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 650ms var(--motion-ease);
+}
+
+.process-steps li.is-active {
+  background: rgba(16, 29, 86, 0.42);
+  border-color: rgba(255, 255, 255, 0.38);
+  box-shadow:
+    inset 0 1px rgba(255, 255, 255, 0.1),
+    0 1rem 2.2rem rgba(9, 18, 65, 0.14);
+  transform: translateY(-4px);
+}
+
+.process-steps li.is-active::before {
+  transform: scaleX(1);
+}
+
+.faq-list details {
+  transition:
+    background-color 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    transform 260ms var(--motion-ease);
+}
+
+.faq-list details[open] {
+  transform: translateY(-2px);
+}
+
+.faq-list summary::after {
+  transition: transform 300ms var(--motion-ease);
+}
+
+.faq-list details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-list details[open] p {
+  animation: faq-content-in 360ms var(--motion-ease) both;
+}
+
+@media (max-width: 700px) {
+  .projects .project-feature.is-showcasing .project-preview {
+    object-position: center 45%;
+    transform: scale(1.012);
+  }
+
+  .process-steps {
+    padding-top: 0;
+  }
+
+  .process-steps::before,
+  .process-steps::after {
+    display: none;
+  }
+
+  .process-steps li.is-active {
+    transform: translateY(-2px);
+  }
+
+  .whatsapp-fab::before {
+    animation: whatsapp-aura 1.8s ease-out 900ms 1 both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .js .site-header,
+  .js .hero-copy .kicker,
+  .js .hero-copy .hero-lead,
+  .js .hero-copy .hero-actions,
+  .js .hero-title-line > span,
+  .js .hero-title-line > em,
+  .js .hero .work-index,
+  .js .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    animation: none;
+    transition: none;
+  }
+
+  .hero::after,
+  .faq-list details[open] p {
+    animation: none;
+  }
+
+  .whatsapp-fab::before {
+    animation: none;
+  }
+
+  .projects .project-feature:hover .project-preview,
+  .projects .project-feature.is-showcasing .project-preview,
+  .process-steps li.is-active {
+    object-position: top center;
+    transform: none;
+  }
+}
