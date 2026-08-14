@@ -5229,6 +5229,121 @@ body {
   line-height: 1.45;
 }
 
+.team-strip {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.42fr) minmax(0, 1.58fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(41, 58, 102, 0.14);
+}
+
+.team-strip-heading span {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--blue);
+  font-size: 0.63rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.team-strip-heading p {
+  color: #344058;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.team-strip-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.team-person {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.48);
+  border: 1px solid rgba(41, 58, 102, 0.1);
+  border-radius: 14px;
+  transition:
+    background-color 260ms ease,
+    border-color 260ms ease,
+    transform 340ms var(--motion-ease);
+}
+
+.team-person-photo {
+  width: 3.4rem;
+  height: 3.4rem;
+  overflow: hidden;
+  background: #d7deee;
+  border: 1px solid rgba(41, 58, 102, 0.12);
+  border-radius: 11px;
+}
+
+.team-person-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.03);
+  transition:
+    filter 300ms ease,
+    transform 500ms var(--motion-ease);
+}
+
+.team-photo-alejandro img {
+  object-position: 50% 30%;
+}
+
+.team-photo-albert img {
+  object-position: 43% 36%;
+}
+
+.team-photo-juanse img {
+  object-position: 50% 18%;
+}
+
+.team-person strong,
+.team-person span {
+  display: block;
+}
+
+.team-person strong {
+  margin-bottom: 0.2rem;
+  color: #172033;
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.team-person span {
+  color: #657087;
+  font-size: 0.61rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .team-person:hover {
+    background: rgba(255, 255, 255, 0.72);
+    border-color: rgba(47, 92, 255, 0.22);
+    transform: translateY(-2px);
+  }
+
+  .team-person:hover .team-person-photo img {
+    filter: saturate(1) contrast(1.02);
+    transform: scale(1.045);
+  }
+}
+
 @media (max-width: 980px) {
   .about-layout {
     grid-template-columns: 1fr;
@@ -5270,6 +5385,25 @@ body {
   .about-card {
     padding: 1.15rem;
     border-radius: 20px;
+  }
+
+  .team-strip {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 1.25rem;
+  }
+
+  .team-strip-list {
+    grid-template-columns: 1fr;
+  }
+
+  .team-person {
+    grid-template-columns: 3.2rem minmax(0, 1fr);
+  }
+
+  .team-person-photo {
+    width: 3.2rem;
+    height: 3.2rem;
   }
 
   .about-identity {
@@ -8104,7 +8238,9 @@ body {
 .js .about-card.is-visible .about-identity,
 .js .about-card.is-visible .about-card-heading,
 .js .about-card.is-visible .about-capabilities,
-.js .about-card.is-visible .about-card-note {
+.js .about-card.is-visible .about-card-note,
+.js .team-strip.is-visible .team-strip-heading,
+.js .team-strip.is-visible .team-person {
   animation: premium-detail-in 620ms var(--motion-ease) backwards;
 }
 
@@ -8113,6 +8249,22 @@ body {
 .js .system-case.is-visible > small,
 .js .about-card.is-visible .about-identity {
   animation-delay: calc(var(--reveal-delay, 0ms) + 100ms);
+}
+
+.js .team-strip.is-visible .team-strip-heading {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 90ms);
+}
+
+.js .team-strip.is-visible .team-person:nth-child(1) {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 150ms);
+}
+
+.js .team-strip.is-visible .team-person:nth-child(2) {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 220ms);
+}
+
+.js .team-strip.is-visible .team-person:nth-child(3) {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 290ms);
 }
 
 .js .service-card.is-visible h3,
@@ -8412,7 +8564,9 @@ body {
   .js .about-card.is-visible .about-identity,
   .js .about-card.is-visible .about-card-heading,
   .js .about-card.is-visible .about-capabilities,
-  .js .about-card.is-visible .about-card-note {
+  .js .about-card.is-visible .about-card-note,
+  .js .team-strip.is-visible .team-strip-heading,
+  .js .team-strip.is-visible .team-person {
     opacity: 1;
     transform: none;
     animation: none;
