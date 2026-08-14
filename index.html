@@ -4,6 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <style>
+      html {
+        background: #0b0e13;
+      }
+
+      html.js:not(.motion-ready) body {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      html.js.motion-ready body {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 180ms ease-out;
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add('js')
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('motion-ready')
+      } else {
+        window.setTimeout(() => document.documentElement.classList.add('motion-ready'), 1800)
+      }
+    </script>
+
     <title>Manageopy | Software a medida y soluciones web en Paraguay</title>
     <meta
       name="description"
@@ -267,12 +292,12 @@
 
       <section class="client-ledger" id="clientes" aria-labelledby="clientes-title">
         <div class="shell">
-          <div class="client-ledger-header">
+          <div class="client-ledger-header reveal reveal-left">
             <p class="section-code">Clientes</p>
             <h2 id="clientes-title">Algunos de los negocios y profesionales con los que trabajamos.</h2>
           </div>
 
-          <div class="client-marquee" aria-label="Clientes y marcas">
+          <div class="client-marquee reveal" aria-label="Clientes y marcas">
             <div class="client-marquee-track">
               <div class="client-marquee-group">
                 <div class="client-logo"><img src="/src/Marcas/NenukosBarber.webp" alt="Nenukos Barber" /></div>
@@ -708,7 +733,7 @@
 
       <section class="about" id="equipo">
         <div class="shell about-layout">
-          <div class="about-copy reveal">
+          <div class="about-copy reveal reveal-left">
             <div class="about-section-label">
               <span aria-hidden="true">M</span>
               <p>El equipo detrás de Manageopy</p>
@@ -728,7 +753,7 @@
             </a>
           </div>
 
-          <div class="about-card reveal">
+          <div class="about-card reveal reveal-right">
             <div class="about-identity">
               <img src="/src/Logo/LogoManageopy-sm.png" alt="" width="44" height="44" />
               <div>
@@ -773,7 +798,7 @@
 
       <section class="faq section-paper">
         <div class="shell faq-layout">
-          <div class="faq-intro reveal">
+          <div class="faq-intro reveal reveal-left">
             <div class="faq-section-label">
               <span aria-hidden="true">05</span>
               <p>Preguntas frecuentes</p>
@@ -793,7 +818,7 @@
             </a>
           </div>
 
-          <div class="faq-list reveal">
+          <div class="faq-list reveal reveal-right">
             <details>
               <summary>
                 <span>01</span>
@@ -870,7 +895,7 @@
 
       <section class="closing">
         <div class="shell closing-layout">
-          <div class="closing-copy">
+          <div class="closing-copy reveal reveal-left">
             <div class="closing-section-label">
               <span aria-hidden="true">↗</span>
               <p>¿Tenés algo en mente?</p>
@@ -882,7 +907,7 @@
               vemos juntos por dónde empezar.
             </p>
           </div>
-          <div class="closing-actions">
+          <div class="closing-actions reveal reveal-right">
             <p class="closing-actions-label">Podés escribirnos si...</p>
             <ul class="closing-prompts" aria-label="Motivos para conversar">
               <li><span aria-hidden="true">✓</span> Querés ordenar la gestión de tu negocio.</li>

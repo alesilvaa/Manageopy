@@ -7854,7 +7854,7 @@ body {
 
 /* Premium motion system */
 :root {
-  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-spring: cubic-bezier(0.2, 0.85, 0.25, 1.12);
 }
 
@@ -7899,6 +7899,30 @@ body {
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes premium-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes premium-heading-in {
+  from {
+    opacity: 0;
+    clip-path: inset(0 0 92% 0);
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
   }
 }
 
@@ -7962,6 +7986,11 @@ body {
   overflow: hidden;
 }
 
+.hero-title-line:nth-child(2) {
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
+}
+
 .hero-title-line > span,
 .hero-title-line > em {
   display: block;
@@ -8008,20 +8037,122 @@ body {
 }
 
 .js .reveal {
-  filter: blur(5px);
-  transform: translateY(26px) scale(0.992);
+  --reveal-x: 0px;
+  --reveal-y: 28px;
+  opacity: 0;
+  transform: translate3d(var(--reveal-x), var(--reveal-y), 0);
   transition:
-    opacity 820ms var(--motion-ease) var(--reveal-delay, 0ms),
-    filter 820ms var(--motion-ease) var(--reveal-delay, 0ms),
-    transform 820ms var(--motion-ease) var(--reveal-delay, 0ms),
+    opacity 980ms var(--motion-ease) var(--reveal-delay, 0ms),
+    transform 980ms var(--motion-ease) var(--reveal-delay, 0ms),
     background-color 300ms ease,
     border-color 300ms ease,
     box-shadow 300ms ease;
 }
 
+.js .reveal.reveal-left {
+  --reveal-x: -18px;
+  --reveal-y: 14px;
+}
+
+.js .reveal.reveal-right {
+  --reveal-x: 18px;
+  --reveal-y: 14px;
+}
+
 .js .reveal.is-visible {
-  filter: blur(0);
-  transform: translateY(0) scale(1);
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.js .section-heading.is-visible h2,
+.js .client-ledger-header.is-visible h2,
+.js .systems-heading.is-visible h3,
+.js .testimonials-heading.is-visible h2,
+.js .process-intro.is-visible h2,
+.js .about-copy.is-visible h2,
+.js .faq-intro.is-visible h2,
+.js .closing-copy.is-visible h2 {
+  animation: premium-heading-in 920ms var(--motion-ease) backwards;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 90ms);
+}
+
+.js .section-heading.is-visible > p,
+.js .client-ledger-header.is-visible .section-code,
+.js .systems-heading.is-visible > p,
+.js .testimonials-heading.is-visible > div:last-child,
+.js .process-intro.is-visible > p,
+.js .about-copy.is-visible > p,
+.js .faq-intro.is-visible > p,
+.js .closing-copy.is-visible > p {
+  animation: premium-detail-in 720ms var(--motion-ease) backwards;
+  animation-delay: calc(var(--reveal-delay, 0ms) + 230ms);
+}
+
+.js .service-card.is-visible .service-place,
+.js .service-card.is-visible h3,
+.js .service-card.is-visible .service-lead,
+.js .service-card.is-visible .service-list,
+.js .service-card.is-visible .service-proof,
+.js .service-card.is-visible .service-cta,
+.js .testimonial-card.is-visible .testimonial-person,
+.js .testimonial-card.is-visible blockquote,
+.js .system-case.is-visible > small,
+.js .system-case.is-visible h4,
+.js .system-case.is-visible > p,
+.js .system-case.is-visible > strong,
+.js .system-case.is-visible ul,
+.js .about-card.is-visible .about-identity,
+.js .about-card.is-visible .about-card-heading,
+.js .about-card.is-visible .about-capabilities,
+.js .about-card.is-visible .about-card-note {
+  animation: premium-detail-in 620ms var(--motion-ease) backwards;
+}
+
+.js .service-card.is-visible .service-place,
+.js .testimonial-card.is-visible .testimonial-person,
+.js .system-case.is-visible > small,
+.js .about-card.is-visible .about-identity {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 100ms);
+}
+
+.js .service-card.is-visible h3,
+.js .service-card.is-visible .service-lead,
+.js .system-case.is-visible h4,
+.js .about-card.is-visible .about-card-heading {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 150ms);
+}
+
+.js .service-card.is-visible .service-list,
+.js .testimonial-card.is-visible blockquote,
+.js .system-case.is-visible > p,
+.js .about-card.is-visible .about-capabilities {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 210ms);
+}
+
+.js .service-card.is-visible .service-proof,
+.js .system-case.is-visible > strong,
+.js .system-case.is-visible ul,
+.js .about-card.is-visible .about-card-note {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 260ms);
+}
+
+.js .service-card.is-visible .service-cta {
+  animation-delay: calc(var(--reveal-delay, 0ms) + 310ms);
+}
+
+.service-figure,
+.project-visual,
+.testimonial-photo,
+.system-case-head {
+  transform: translate3d(0, var(--motion-y, 0px), 0);
+  transition: transform 160ms linear;
+}
+
+.service-figure.is-motion-active,
+.project-visual.is-motion-active,
+.testimonial-photo.is-motion-active,
+.system-case-head.is-motion-active {
+  will-change: transform;
 }
 
 .main-nav a.is-active {
@@ -8088,9 +8219,8 @@ body {
 }
 
 .projects .project-visual-preview .project-preview {
-  object-position: top center;
+  object-position: center var(--preview-position, 18%);
   transition:
-    object-position 1800ms var(--motion-ease),
     transform 600ms var(--motion-ease),
     filter 400ms ease;
 }
@@ -8098,6 +8228,17 @@ body {
 .projects .project-feature:hover .project-preview {
   object-position: center 72%;
   transform: scale(1.018);
+}
+
+.projects .project-feature.is-showcasing .project-preview {
+  transform: scale(1.012);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .projects .project-feature:hover .project-preview {
+    object-position: center 72%;
+    transform: scale(1.018);
+  }
 }
 
 .process-steps {
@@ -8182,8 +8323,20 @@ body {
 }
 
 @media (max-width: 700px) {
+  .js .reveal,
+  .js .reveal.reveal-left,
+  .js .reveal.reveal-right {
+    --reveal-x: 0px;
+    --reveal-y: 24px;
+    transition:
+      opacity 780ms var(--motion-ease) var(--reveal-delay, 0ms),
+      transform 780ms var(--motion-ease) var(--reveal-delay, 0ms),
+      background-color 300ms ease,
+      border-color 300ms ease,
+      box-shadow 300ms ease;
+  }
+
   .projects .project-feature.is-showcasing .project-preview {
-    object-position: center 45%;
     transform: scale(1.012);
   }
 
@@ -8225,6 +8378,52 @@ body {
   .hero::after,
   .faq-list details[open] p {
     animation: none;
+  }
+
+  .js .service-card.is-visible .service-place,
+  .js .section-heading.is-visible h2,
+  .js .client-ledger-header.is-visible h2,
+  .js .systems-heading.is-visible h3,
+  .js .testimonials-heading.is-visible h2,
+  .js .process-intro.is-visible h2,
+  .js .about-copy.is-visible h2,
+  .js .faq-intro.is-visible h2,
+  .js .closing-copy.is-visible h2,
+  .js .section-heading.is-visible > p,
+  .js .client-ledger-header.is-visible .section-code,
+  .js .systems-heading.is-visible > p,
+  .js .testimonials-heading.is-visible > div:last-child,
+  .js .process-intro.is-visible > p,
+  .js .about-copy.is-visible > p,
+  .js .faq-intro.is-visible > p,
+  .js .closing-copy.is-visible > p,
+  .js .service-card.is-visible h3,
+  .js .service-card.is-visible .service-lead,
+  .js .service-card.is-visible .service-list,
+  .js .service-card.is-visible .service-proof,
+  .js .service-card.is-visible .service-cta,
+  .js .testimonial-card.is-visible .testimonial-person,
+  .js .testimonial-card.is-visible blockquote,
+  .js .system-case.is-visible > small,
+  .js .system-case.is-visible h4,
+  .js .system-case.is-visible > p,
+  .js .system-case.is-visible > strong,
+  .js .system-case.is-visible ul,
+  .js .about-card.is-visible .about-identity,
+  .js .about-card.is-visible .about-card-heading,
+  .js .about-card.is-visible .about-capabilities,
+  .js .about-card.is-visible .about-card-note {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .service-figure,
+  .project-visual,
+  .testimonial-photo,
+  .system-case-head {
+    transform: none;
+    transition: none;
   }
 
   .whatsapp-fab::before {

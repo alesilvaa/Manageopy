@@ -1,7 +1,5 @@
 import './style.css'
 
-document.documentElement.classList.add('js')
-
 document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year')
   if (year) year.textContent = new Date().getFullYear()
@@ -12,11 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const staggerGroups = document.querySelectorAll(
     '.service-grid, .public-project-grid, .testimonial-grid, .process-steps',
   )
+  const staggerStep = window.innerWidth <= 700 ? 70 : 100
 
   staggerGroups.forEach((group) => {
     ;[...group.children].forEach((element, index) => {
       if (element.classList.contains('reveal')) {
-        element.style.setProperty('--reveal-delay', `${Math.min(index * 90, 270)}ms`)
+        element.style.setProperty('--reveal-delay', `${Math.min(index * staggerStep, 300)}ms`)
       }
     })
   })
@@ -28,9 +27,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return
   }
 
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => document.documentElement.classList.add('motion-ready'))
-  })
+  const revealPage = () => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => document.documentElement.classList.add('motion-ready'))
+    })
+  }
+
+  const fontReady = document.fonts?.ready ?? Promise.resolve()
+  Promise.race([fontReady, new Promise((resolve) => window.setTimeout(resolve, 650))]).then(revealPage)
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -41,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     },
     {
-      rootMargin: '0px 0px -8% 0px',
-      threshold: 0.08,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.1,
     },
   )
 
@@ -55,8 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     },
     {
-      rootMargin: '-18% 0px -18% 0px',
-      threshold: 0.55,
+      rootMargin: '-14% 0px -14% 0px',
+      threshold: 0.4,
     },
   )
 
@@ -64,10 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const process = document.querySelector('.process')
   const processSteps = [...document.querySelectorAll('.process-steps li')]
-  let processFrame = null
+  const depthElements = [
+    ...document.querySelectorAll(
+      '.service-figure, .project-visual, .testimonial-photo, .system-case-head',
+    ),
+  ]
+  let motionFrame = null
 
   const updateProcessProgress = () => {
-    processFrame = null
     if (!process || processSteps.length === 0) return
 
     const rect = process.getBoundingClientRect()
@@ -82,14 +90,45 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  const requestProcessUpdate = () => {
-    if (processFrame !== null) return
-    processFrame = requestAnimationFrame(updateProcessProgress)
+  const updateDepthMotion = () => {
+    const viewportHeight = window.innerHeight
+
+    depthElements.forEach((element) => {
+      const rect = element.getBoundingClientRect()
+      const isNearViewport = rect.bottom > -120 && rect.top < viewportHeight + 120
+
+      element.classList.toggle('is-motion-active', isNearViewport)
+      if (!isNearViewport) return
+
+      const centerOffset = rect.top + rect.height / 2 - viewportHeight / 2
+      const travelRange = viewportHeight / 2 + rect.height / 2
+      const normalizedOffset = Math.max(-1, Math.min(1, centerOffset / travelRange))
+      const strength = element.classList.contains('project-visual') ? 10 : 6
+      const motionY = -normalizedOffset * strength
+
+      element.style.setProperty('--motion-y', `${motionY.toFixed(2)}px`)
+
+      if (element.classList.contains('project-visual')) {
+        const previewPosition = 50 - normalizedOffset * 24
+        element.style.setProperty('--preview-position', `${previewPosition.toFixed(2)}%`)
+      }
+    })
   }
 
-  updateProcessProgress()
-  window.addEventListener('scroll', requestProcessUpdate, { passive: true })
-  window.addEventListener('resize', requestProcessUpdate)
+  const updatePageMotion = () => {
+    motionFrame = null
+    updateProcessProgress()
+    updateDepthMotion()
+  }
+
+  const requestMotionUpdate = () => {
+    if (motionFrame !== null) return
+    motionFrame = requestAnimationFrame(updatePageMotion)
+  }
+
+  updatePageMotion()
+  window.addEventListener('scroll', requestMotionUpdate, { passive: true })
+  window.addEventListener('resize', requestMotionUpdate)
 
   const navLinks = [...document.querySelectorAll('.main-nav a[href^="#"]')]
   const navSections = navLinks
