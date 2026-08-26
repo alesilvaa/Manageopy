@@ -1,4 +1,6 @@
 import './style.css'
+import './services.css'
+import './mobile.css'
 
 document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year')
