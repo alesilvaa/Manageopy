@@ -157,7 +157,19 @@
   }
 
   .client-ledger-header {
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .client-ledger-header .section-code {
     display: none;
+  }
+
+  .client-ledger-header h2 {
+    max-width: none;
+    font-size: 1.15rem;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
   }
 
   .client-marquee {
