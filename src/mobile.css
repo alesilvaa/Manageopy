@@ -117,7 +117,7 @@
   .work-index .work-index-row:hover,
   .work-index .work-index-row:nth-child(2):hover,
   .work-index .work-index-row:nth-child(3):hover {
-    grid-template-columns: 2.15rem minmax(0, 1fr);
+    grid-template-columns: 2.35rem minmax(0, 1fr);
     gap: 0.55rem;
     min-height: 3.7rem;
     padding: 0.55rem;
@@ -126,8 +126,8 @@
   }
 
   .work-index .work-mark {
-    width: 2.15rem;
-    height: 2.15rem;
+    width: 2.35rem;
+    height: 2.35rem;
     border-radius: 9px;
   }
 
@@ -567,5 +567,40 @@
 
   .footer-summary p {
     max-width: 26rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .work-index-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.42rem;
+  }
+
+  .work-index .work-index-row,
+  .work-index .work-index-row:hover,
+  .work-index .work-index-row:nth-child(2):hover,
+  .work-index .work-index-row:nth-child(3):hover {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.55rem;
+    min-height: 3.45rem;
+    padding: 0.5rem;
+  }
+
+  .work-index .work-mark {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .work-index .work-name strong {
+    overflow: visible;
+    font-size: 0.76rem;
+    line-height: 1.15;
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .work-index .work-index-row .work-name small,
+  .work-index .work-index-row:nth-child(2) .work-name small {
+    display: none;
   }
 }

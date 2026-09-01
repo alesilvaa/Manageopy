@@ -7728,14 +7728,28 @@ body {
 }
 
 .work-index .work-mark img {
-  padding: 0.28rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.16rem;
+  object-fit: contain;
 }
 
-.work-index .mark-sf {
-  background: linear-gradient(145deg, #5b7cff, #2f5cff);
-  box-shadow: 0 0.35rem 0.9rem rgba(47, 92, 255, 0.35);
-  font-size: 0.7rem;
-  font-weight: 800;
+.work-index .mark-sigfrancis,
+.work-index .mark-lapidas,
+.work-index .mark-newgalley {
+  background: #fff;
+}
+
+.work-index .mark-sigfrancis img,
+.work-index .mark-lapidas img,
+.work-index .mark-newgalley img {
+  padding: 0;
+  object-fit: cover;
+}
+
+.work-index .mark-sigfrancis {
+  box-shadow: 0 0.35rem 0.9rem rgba(166, 211, 62, 0.24);
 }
 
 .work-index .work-name {
